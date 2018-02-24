@@ -22,7 +22,7 @@ export default class Intensite extends Component {
           <Text>Vous cherchez les bières les plus fortes, les moins chères et le gout importe peu</Text>
         </View>
         <View>
-          <Image source={pic} style={{ width: 200, height: 200, margin: 10, marginLeft: 100 }} />
+          <Image source={pic} style={{ width: 200, height: 200, margin: 10, marginLeft: 100, resizeMode: "contain" }} />
         </View>
         <View style={{ margin: 20, marginLeft: 50 }}>
           <Text>Qualité</Text>
