@@ -6,6 +6,8 @@ import Intensite from './Intensite'
 import IntPrix from './IntPrix'
 import QuaPrix from './QuaPrix'
 import Qualite from './Qualite'
+import Connexion from './Connexion'
+import Inscription from './Inscription'
 
 
 
@@ -20,13 +22,13 @@ class HomeScreen extends React.Component {
             <View style={styles.container}>
                 <View style={styles.buttonContainer}>
                     <Button
-                        onPress={() => this.props.navigation.navigate('Profils')}
+                        onPress={() => this.props.navigation.navigate('Connexion')}
                         title="Connexion"
                     />
                 </View>
                 <View style={styles.buttonContainer}>
                     <Button
-                        //onPress={() => this.props.navigation.navigate('Qualite')}
+                        onPress={() => this.props.navigation.navigate('Inscription')}
                         title="Inscription"
                     />
                 </View>
@@ -78,7 +80,13 @@ const RootStack = StackNavigator(
         },
         Profils: {
             screen: Profils,
-        }
+        },
+        Connexion: {
+            screen: Connexion,
+        },
+        Inscription: {
+            screen: Inscription,
+        },
     },
     {
         initialRouteName: 'Home',

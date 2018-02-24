@@ -5,6 +5,14 @@ import { StackNavigator } from 'react-navigation';
 class HomeScreen extends React.Component {
     static navigationOptions = {
         title: 'Home',
+        //headerTitle: <LogoTitle />,
+        headerRight: (
+            <Button
+                onPress={() => alert('This is a button!')}
+                title="Info"
+                color="#fff"
+            />
+        ),
     };
     render() {
         return (
@@ -52,6 +60,10 @@ class DetailsScreen extends React.Component {
                     title="Go back"
                     onPress={() => this.props.navigation.goBack()}
                 />
+                <Button
+                    title="Update the title"
+                    onPress={() => this.props.navigation.setParams({ otherParam: 'Updated!' })}
+                />
             </View>
         );
     }
@@ -68,6 +80,16 @@ const RootStack = StackNavigator(
     },
     {
         initialRouteName: 'Home',
+        /* The header config from HomeScreen is now here */
+        navigationOptions: {
+            headerStyle: {
+                backgroundColor: '#f4511e',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            },
+        },
     }
 );
 

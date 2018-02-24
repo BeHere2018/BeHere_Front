@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import { Alert, Button, StyleSheet, View, Text, Image } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import Intensite from './Intensite'
-import IntPrix from './IntPrix'
-import QuaPrix from './QuaPrix'
-import Qualite from './Qualite'
 
 
 
-//export default 
-class HomeScreen extends React.Component {
+export default class Profils extends React.Component {
     render() {
         let pic = {
             uri: 'https://www.echosciences-grenoble.fr/uploads/body_image/attachment/1005167449/th.jpg',
@@ -69,33 +64,3 @@ const styles = StyleSheet.create({
         //alignItems:'center',
     }
 })
-
-const RootStack = StackNavigator(
-    {
-        Home: {
-            screen: HomeScreen,
-        },
-        Intensite: {
-            screen: Intensite,
-        },
-        IntPrix: {
-            screen: IntPrix,
-        },
-        Qualite: {
-            screen: Qualite,
-        },
-        QuaPrix: {
-            screen: QuaPrix,
-        },
-    },
-    {
-        initialRouteName: 'Home',
-    }
-);
-
-
-export default class App extends React.Component {
-    render() {
-        return <RootStack />;
-    }
-}
