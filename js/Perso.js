@@ -22,6 +22,31 @@ const data = [
         Couleur: "violet",
         url: ""
     },
+    {
+        Nom: "3 Monts",
+        Couleur: "violet",
+        url: ""
+    },
+    {
+        Nom: "3 Monts",
+        Couleur: "violet",
+        url: ""
+    },
+    {
+        Nom: "3 Monts",
+        Couleur: "violet",
+        url: ""
+    },
+    {
+        Nom: "3 Monts",
+        Couleur: "violet",
+        url: ""
+    },
+    {
+        Nom: "3 Monts",
+        Couleur: "violet",
+        url: ""
+    },
 
 ];
 const type = [
@@ -35,6 +60,7 @@ const type = [
         type: "Bière Brune"
     },
 ];
+const _renderItem = ({ item }) => <Text>{item.Nom}</Text>;
 
 export default class Perso extends React.Component {
     static navigationOptions = {
@@ -59,21 +85,15 @@ export default class Perso extends React.Component {
                 </View>
                 <View>
                     <Text style={{ borderBottomWidth: 5 }}>Bière de garde</Text>
-                    <FlatList
-                        style={{ flex: 1 }}
-                        horizontal
-                        data={this.state.data}
-                        renderItem={({ item: rowData }) => {
-                            return (
-                                <View style={{ margin: 3, width: "20%", height: "20%" }}>
-                                    <View style={{ width: 10, height: 10, backgroundColor: rowData.Couleur }} />
-                                    <Image source={rowData.url} style={styles.picture} />
-                                    <Text>rowData.Nom</Text>
-                                </View>
-                            );
-                        }}
-                        keyExtractor={(item, index) => index}
-                    />
+                    <FlatList horizontal data={this.state.data} renderItem={_renderItem} />
+                </View>
+                <View>
+                    <Text style={{ borderBottomWidth: 5 }}>Bière Rousse</Text>
+                    <FlatList horizontal data={this.state.data} renderItem={_renderItem} />
+                </View>
+                <View>
+                    <Text style={{ borderBottomWidth: 5 }}>Bière Brune</Text>
+                    <FlatList horizontal data={this.state.data} renderItem={_renderItem} />
                 </View>
             </View>
         );

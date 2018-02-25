@@ -33,7 +33,6 @@ export default class ProfilSwap extends Component {
             data: data
         };
     }
-
     render() {
         return (
             //<View style={{ flex: 1 }}>
