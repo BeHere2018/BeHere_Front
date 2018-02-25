@@ -35,7 +35,7 @@ export default class Inscription extends Component {
                     //onChangeText={(text) => this.setState({ text })}
                     />
                     <Button
-                        onPress={() => this.props.navigation.navigate('Profils')}
+                        onPress={() => this.props.navigation.navigate('Connexion')}
                         title="Inscription"
                     />
                 </View>

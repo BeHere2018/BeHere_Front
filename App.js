@@ -1,2 +1,2 @@
-import App from './js/Profils';
+import App from './js/ProfilSwap';
 export default App;
