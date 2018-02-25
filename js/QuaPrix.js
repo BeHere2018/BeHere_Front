@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View, Text, Image } from 'react-native';
 
-export default class Intensite extends Component {
-  _onPressButton() {
-    Alert.alert('You tapped the button!')
-  }
+export default class QuaPrix extends Component {
+  static navigationOptions = {
+    title: 'Qualite Prix',
+  };
   render() {
     let pic = {
       uri: 'https://cdn20.patchcdn.com/users/38195/20171023/013718/styles/T800x600/public/processed_images/simpsons_homer_moe_fox-1508778948-2018.jpg'

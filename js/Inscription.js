@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View, Text, Image, TextInput } from 'react-native';
 
 export default class Inscription extends Component {
+    static navigationOptions = {
+        title: 'Inscription',
+    };
     render() {
         return (
             <View style={styles.container}>

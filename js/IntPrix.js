@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View, Text, Image } from 'react-native';
 
-export default class Intensite extends Component {
-  _onPressButton() {
-    Alert.alert('You tapped the button!')
-  }
+export default class IntPrix extends Component {
+  static navigationOptions = {
+    title: 'Intensité Prix',
+  };
   render() {
     let pic = {
       uri: 'https://i.pinimg.com/originals/a6/eb/58/a6eb5818e89621e8c0d1996979003eef.jpg'

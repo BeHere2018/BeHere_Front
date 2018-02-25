@@ -8,11 +8,15 @@ import QuaPrix from './QuaPrix'
 import Qualite from './Qualite'
 import Connexion from './Connexion'
 import Inscription from './Inscription'
+import ProfilSwap from './ProfilSwap'
 
 
 
 //export default 
 class HomeScreen extends React.Component {
+    static navigationOptions = {
+        title: 'Home',
+    };
     render() {
         let pic = {
             uri: 'https://www.echosciences-grenoble.fr/uploads/body_image/attachment/1005167449/th.jpg',
@@ -86,6 +90,9 @@ const RootStack = StackNavigator(
         },
         Inscription: {
             screen: Inscription,
+        },
+        ProfilSwap: {
+            screen: ProfilSwap,
         },
     },
     {

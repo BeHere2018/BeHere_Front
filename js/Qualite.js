@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View, Text, Image } from 'react-native';
 
-export default class Intensite extends Component {
-  _onPressButton() {
-    Alert.alert('You tapped the button!')
-  }
+export default class Qualite extends Component {
+  static navigationOptions = {
+    title: 'Qualité',
+  };
   render() {
     let pic = {
       uri: 'https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fewedit.files.wordpress.com%2F2016%2F03%2Farcher_0.jpg%3Fw%3D612&w=1000&q=85'
@@ -34,7 +34,7 @@ export default class Intensite extends Component {
           </View>
           <Text>Intensité</Text>
           <View style={{ width: 256, height: 56, borderWidth: 3 }}>
-            <View style={{ width: 250, height: 50, backgroundColor: 'blue' }} />
+            <View style={{ width: 15, height: 50, backgroundColor: 'blue' }} />
           </View>
           <View style={{ alignItems: 'center', marginTop: 10 }}>
             <Text>"La bières c'est de l'eau"</Text>

@@ -5,6 +5,9 @@ import { StackNavigator } from 'react-navigation';
 
 
 export default class Profils extends React.Component {
+    static navigationOptions = {
+        title: 'Profiles',
+    };
     render() {
         let picQualite = {
             uri: 'https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fewedit.files.wordpress.com%2F2016%2F03%2Farcher_0.jpg%3Fw%3D612&w=1000&q=85'
@@ -54,7 +57,7 @@ export default class Profils extends React.Component {
                 </View>
                 <View style={styles.buttonContainer}>
                     <Button
-                        onPress={() => this.props.navigation.navigate('IntPrix')}
+                        onPress={() => this.props.navigation.navigate('ProfilSwap')}
                         title="Présentation des Profils"
                     />
                 </View>

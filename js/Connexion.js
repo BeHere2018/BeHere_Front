@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View, Text, Image, TextInput } from 'react-native';
 
 export default class Connexion extends Component {
+    static navigationOptions = {
+        title: 'Connexion',
+    };
     /*
     constructor(props) {
         super(props);

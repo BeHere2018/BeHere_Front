@@ -1,2 +1,2 @@
-import App from './js/ProfilSwap';
+import App from './js/Perso';
 export default App;

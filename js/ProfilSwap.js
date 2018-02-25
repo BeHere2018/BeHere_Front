@@ -13,16 +13,20 @@ const data = [
     },
     {
         Url: IntPrix,
-        title: "test"
+        title: "IntPrix"
     },
     {
         Url: QuaPrix,
-        title: "something three"
+        title: "QuaPrix"
+    },
+    {
+        Url: Qualite,
+        title: "Qualite"
     },
 
 ];
 
-export default class App extends Component {
+export default class ProfilSwap extends Component {
     constructor(props) {
         super(props);
         this.state = {

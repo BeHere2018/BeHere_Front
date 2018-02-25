@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, StyleSheet, View, Text, Image } from 'react-native';
 
 export default class Intensite extends Component {
-  _onPressButton() {
-    Alert.alert('You tapped the button!')
-  }
+  static navigationOptions = {
+    title: 'Intensité',
+  };
   render() {
     let pic = {
       uri: 'https://www.echosciences-grenoble.fr/uploads/body_image/attachment/1005167449/th.jpg',
