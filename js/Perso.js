@@ -1,66 +1,140 @@
 import React, { Component } from 'react';
 import { Alert, Button, StyleSheet, View, Text, Image, FlatList } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+
 const data = [
     {
-        Nom: "3 Monts",
-        Couleur: "noir",
-        url: ""
+        type: "Biere de garde",
+        ListBiere: [
+            {
+                Biere: "test",
+                couleur: "red",
+                uri: 'http://www.bouteille-de-biere.com/media/catalog/product/cache/3/image/9df78eab33525d08d6e5fb8d27136e95/2/1/21287-biere-kronembourg-blonde-25cl.jpg'
+            },
+            {
+                Biere: "test",
+                couleur: "orange",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "green",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+        ]
     },
     {
-        Nom: "3 Monts",
-        Couleur: "rouge",
-        url: ""
+        type: "Bière Rousse",
+        ListBiere: [
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+        ]
     },
     {
-        Nom: "3 Monts",
-        Couleur: "orange",
-        url: ""
+        type: "Bière Brune",
+        ListBiere: [
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            }, {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+            {
+                Biere: "test",
+                couleur: "",
+                uri: "#"
+            },
+        ]
     },
-    {
-        Nom: "3 Monts",
-        Couleur: "violet",
-        url: ""
-    },
-    {
-        Nom: "3 Monts",
-        Couleur: "violet",
-        url: ""
-    },
-    {
-        Nom: "3 Monts",
-        Couleur: "violet",
-        url: ""
-    },
-    {
-        Nom: "3 Monts",
-        Couleur: "violet",
-        url: ""
-    },
-    {
-        Nom: "3 Monts",
-        Couleur: "violet",
-        url: ""
-    },
-    {
-        Nom: "3 Monts",
-        Couleur: "violet",
-        url: ""
-    },
+]
 
-];
-const type = [
-    {
-        type: "Bière de garde"
-    },
-    {
-        type: "Bière Rousse"
-    },
-    {
-        type: "Bière Brune"
-    },
-];
-const _renderItem = ({ item }) => <Text>{item.Nom}</Text>;
+
+_renderItem = ({ item }) => (
+    <View>
+        <Text style={{ borderBottomWidth: 5 }}>{item.type}</Text>
+        <FlatList horizontal data={item.ListBiere} renderItem={_list} />
+    </View>
+);
+
+_list = ({ item }) => (
+    <View>
+        <View style={{ backgroundColor: item.couleur, height: 5, width: 5 }}></View>
+        <Image source={item} style={{ width: 50, height: 50 }} />
+        <Text style={{ margin: 20 }}>{item.Biere}</Text>
+    </View>
+);
+
 
 export default class Perso extends React.Component {
     static navigationOptions = {
@@ -73,9 +147,6 @@ export default class Perso extends React.Component {
         };
     }
     render() {
-        let PicQualite = {
-            uri: 'https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fewedit.files.wordpress.com%2F2016%2F03%2Farcher_0.jpg%3Fw%3D612&w=1000&q=85'
-        };
 
         return (
             <View style={styles.container}>
@@ -84,16 +155,7 @@ export default class Perso extends React.Component {
                     <Text style={{}}>Qualité Intensité</Text>
                 </View>
                 <View>
-                    <Text style={{ borderBottomWidth: 5 }}>Bière de garde</Text>
-                    <FlatList horizontal data={this.state.data} renderItem={_renderItem} />
-                </View>
-                <View>
-                    <Text style={{ borderBottomWidth: 5 }}>Bière Rousse</Text>
-                    <FlatList horizontal data={this.state.data} renderItem={_renderItem} />
-                </View>
-                <View>
-                    <Text style={{ borderBottomWidth: 5 }}>Bière Brune</Text>
-                    <FlatList horizontal data={this.state.data} renderItem={_renderItem} />
+                    <FlatList data={this.state.data} renderItem={_renderItem} />
                 </View>
             </View>
         );
@@ -103,11 +165,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        //justifyContent: 'center',
         backgroundColor: 'skyblue',
-        //borderWidth: 5,
-        //alignItems: 'center',
-        //margin: 20,
         flexDirection: 'column',
     },
     buttonContainer: {
