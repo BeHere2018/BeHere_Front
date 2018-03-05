@@ -1,2 +1,2 @@
-import App from './js/Perso';
+import App from './js/Home';
 export default App;

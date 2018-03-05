@@ -9,6 +9,7 @@ import Qualite from './Qualite'
 import Connexion from './Connexion'
 import Inscription from './Inscription'
 import ProfilSwap from './ProfilSwap'
+import Perso from './Perso'
 
 
 
@@ -20,7 +21,6 @@ class HomeScreen extends React.Component {
     render() {
         let pic = {
             uri: 'https://www.echosciences-grenoble.fr/uploads/body_image/attachment/1005167449/th.jpg',
-            //uri:'https://pre00.deviantart.net/61d6/th/pre/i/2017/258/6/3/bojack_horseman__season_4_review_by_ryanech0-dbnhpy1.jpg'
         };
         return (
             <View style={styles.container}>
@@ -94,6 +94,9 @@ const RootStack = StackNavigator(
         ProfilSwap: {
             screen: ProfilSwap,
         },
+        Perso: {
+            screen: Perso
+        }
     },
     {
         initialRouteName: 'Home',

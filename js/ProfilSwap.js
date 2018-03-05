@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { FlatList, Text } from "react-native";
+import { FlatList, Text, View } from "react-native";
 import { Card } from "react-native-elements";
 import Intensite from './Intensite'
 import IntPrix from './IntPrix'
@@ -26,6 +26,12 @@ const data = [
 
 ];
 
+_renderItem = ({ item }) => (
+    <View style={{ flex: 1, margin: 10 }}>
+        <item.Url style={{ flex: 1 }} />
+    </View>
+);
+
 export default class ProfilSwap extends Component {
     constructor(props) {
         super(props);
@@ -35,19 +41,15 @@ export default class ProfilSwap extends Component {
     }
     render() {
         return (
-            //<View style={{ flex: 1 }}>
-            <FlatList
-                style={{ flex: 1 }}
-                horizontal
-                data={this.state.data}
-                renderItem={({ item: rowData }) => {
-                    return (
-                        <rowData.Url />
-                    );
-                }}
-                keyExtractor={(item, index) => index}
-            />
-            //  </View>
+            <View style={{ flex: 1 }}>
+                <FlatList
+                    style={{ flex: 1 }}
+                    horizontal
+                    data={this.state.data}
+                    renderItem={_renderItem}
+                />
+            </View>
+
         );
     }
 }

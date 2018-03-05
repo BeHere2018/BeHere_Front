@@ -7,23 +7,23 @@ export default class QuaPrix extends Component {
   };
   render() {
     let pic = {
-      uri: 'https://cdn20.patchcdn.com/users/38195/20171023/013718/styles/T800x600/public/processed_images/simpsons_homer_moe_fox-1508778948-2018.jpg'
+      uri: 'https://cdn20.patchcdn.com/users/38195/20171023/013718/styles/T800x600/public/processed_images/simpsons_homer_moe_fox-1508778948-2018.jpg',
     };
     return (
       <View style={styles.container}>
         <View style={styles.buttonContainer}>
           <Button
-            onPress={this._onPressButton}
+            onPress={() => this.props.navigation.navigate('Perso')}
             title="Qualité/Prix"
           />
         </View>
-        <View style={{ borderWidth: 3, margin: 10 }}>
-          <Text>Vous cherchez des bières de qualité avec un prix abordable</Text>
+        <View style={{ borderWidth: 3, margin: 5, flex: 0.75 }}>
+          <Text style={{ textAlign: "center", flex: 1 }}>Vous cherchez des bières de qualité avec un prix abordable</Text>
         </View>
-        <View>
-          <Image source={pic} style={{ width: 200, height: 200, margin: 10, marginLeft: 100, resizeMode: "contain" }} />
+        <View style={{ flex: 1.75 }}>
+          <Image source={pic} style={{ width: 150, height: 150, margin: 10, marginLeft: 150, resizeMode: "contain" }} />
         </View>
-        <View style={{ margin: 20, marginLeft: 50 }}>
+        <View style={{ margin: 5, marginLeft: 50, textAlign: "center", flex: 3 }}>
           <Text>Qualité</Text>
           <View style={{ width: 256, height: 56, borderWidth: 3 }}>
             <View style={{ width: 175, height: 50, backgroundColor: 'red' }} />
@@ -36,9 +36,9 @@ export default class QuaPrix extends Component {
           <View style={{ width: 256, height: 56, borderWidth: 3 }}>
             <View style={{ width: 100, height: 50, backgroundColor: 'blue' }} />
           </View>
-          <View style={{ alignItems: 'center', marginTop: 10 }}>
-            <Text>"Rien ne vaut un bon bar!"</Text>
-            <Text>"Soirée entre potes"</Text>
+          <View style={{ textAlign: "center", marginTop: 5, flex: 1 }}>
+            <Text style={{ flex: 0.5 }}>"Rien ne vaut un bon bar!"</Text>
+            <Text style={{ flex: 0.5 }}>"Soirée entre potes"</Text>
           </View>
         </View>
       </View>
@@ -48,21 +48,14 @@ export default class QuaPrix extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 7,
     justifyContent: 'center',
     backgroundColor: 'skyblue',
-    //borderWidth: 5,
-    //alignItems: 'center'
-    //margin: 20
   },
   buttonContainer: {
-    margin: 20
+    flex: 0.5,
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 30,
   },
-  des: {
-    margin: 10
-    //alignItems:'center',
-  }
 })
-
-// skip this line if using Create React Native App
-//AppRegistry.registerComponent('BehereProject', () => Intensite);
